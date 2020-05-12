@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+//foundation
+@import "foundation/_vars.scss";
+@import "foundation/_mixin.scss";
+@import "foundation/_animation.scss";
+
+//plugins
+
+
+//setting
+@import "setting/_reset.scss";
+@import "setting/_setting.scss";
+@import "setting/_common.scss";
+
+
+//@import "module/**";
+@import "modules/_head.scss";
+@import "modules/_foot.scss";
+@import "modules/_page.scss";
+
+
+//@import "parts/**";
+@import "parts/_btn.scss";
+@import "parts/_loader.scss";
+
+//page
+@import "page/_index.scss";
+@import "page/_news.scss";

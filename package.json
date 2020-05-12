@@ -1,0 +1,40 @@
+{
+  "name": "stoopa_cms",
+  "version": "1.0.0",
+  "description": "My perfect Nuxt.js project",
+  "author": "himeoka",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "gulp": "gulp",
+    "heroku-postbuild": "npm run build"
+  },
+  "dependencies": {
+    "@nuxtjs/dotenv": "^1.4.1",
+    "jquery": "^3.5.1",
+    "lazysizes": "^5.2.0",
+    "nuxt": "^2.12.2",
+    "picturefill": "^3.0.3",
+    "vue-awesome-swiper": "^4.1.1",
+    "vue-observe-visibility": "^0.4.6",
+    "vue-scrollto": "^2.18.1"
+  },
+  "devDependencies": {
+    "@nuxtjs/axios": "^5.10.3",
+    "@nuxtjs/google-analytics": "^2.2.3",
+    "@nuxtjs/svg": "^0.1.11",
+    "coffee-loader": "^0.9.0",
+    "coffeescript": "^2.5.1",
+    "intersection-observer": "^0.10.0",
+    "node-sass": "^4.14.1",
+    "nodemon": "^2.0.3",
+    "nuxt-device-detect": "^1.1.5",
+    "nuxt-user-agent": "^1.2.2",
+    "pug": "^2.0.4",
+    "pug-plain-loader": "^1.0.0",
+    "sass-loader": "^8.0.2"
+  }
+}

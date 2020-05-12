@@ -1,0 +1,261 @@
+// menu_btn
+.m_head{
+  position: absolute;
+  width: 100%;
+  height: $head_height;
+  left: 0;
+  top:0;
+  transition: none;
+  z-index: 10000;
+  position: fixed;
+  &.stay{
+    position: absolute;
+  }
+  a{
+  }
+  &_inner{
+    position: relative;
+    margin: auto;
+    width: $head_inner;
+    display: flex;
+    align-items: center;
+    height:100%;
+  }
+  &_logo{
+    width: 165px;
+    position: relative;
+    z-index: 10;
+    a{
+      display: block;
+      line-height: 0;
+    }
+  }
+  &_list{
+    display: flex;
+    margin-left: 100px;
+    li{
+      a{
+        position: relative;
+        padding: 5px 15px;
+        display: block;
+        line-height: 0;
+        &.active-link{
+          fill: $red2;
+        }
+        svg{
+          height: 10px;
+        }
+        &:before{
+          content: "";
+          display: block;
+          width: 25px;
+          height: 1px;
+          background-color: #000;
+          position: absolute;
+          transform: rotate(-65deg);
+          right: -13px;
+          top: 10px;
+        }
+        &:hover{
+          opacity: .5;
+        }
+      }
+      &:last-of-type{
+        a{
+          &:before{
+            display: none;
+          }
+        }
+      }
+    }
+    &.slide{
+      position: fixed;
+      width: 300px;
+      height: 100%;
+      background-color: #FFF;
+      top: 0;
+      right: 0;
+      padding-top: 100px;
+      display: none;
+      border-left: 1px solid #000;
+      &.on{
+        display: block;
+      }
+      li{
+        a{
+          margin-top: 10px;
+          padding-left: 70px;
+          line-height:2;
+          &:before{
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  &_menu{
+    &_btn{
+    cursor: pointer;
+    display: inline-block;
+    position:absolute;
+    top:0;
+    right:-10px;
+    left: auto;
+    z-index: 102; 
+    border: none;
+    height:100%;
+    width: 62px;
+    margin-right:-16px;
+    &.show{
+      display: block;
+    }
+    &:hover{
+    }
+    &_inner{
+      position: absolute;
+      width: 20px;
+      height:16px;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      &.index{
+        span{
+        }
+      }
+    }
+    &_text{
+      margin-top: 6px;
+      line-height: 0;
+    }
+    span{
+      display: block;
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      background-color:#000;
+      opacity: 1;
+      left: 0;
+      border-radius: 0px;
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+      -webkit-transition: .25s ease-in-out;
+      -moz-transition: .25s ease-in-out;
+      -o-transition: .25s ease-in-out;
+      transition: .25s ease-in-out;
+    }
+    span:nth-child(1) {
+      top: 0px;
+    }
+    span:nth-child(2) {
+      top: 7px;
+    }
+    span:nth-child(3) {
+      bottom:0px;
+    }
+    &.on span:nth-child(1) {
+      top: 6px;
+      -webkit-transform: rotate(135deg);
+      -moz-transform: rotate(135deg);
+      -o-transform: rotate(135deg);
+      transform: rotate(135deg);
+    }
+    &.on span:nth-child(2) {
+      opacity: 0;
+    }
+    &.on span:nth-child(3) {
+      top: 6px;
+      -webkit-transform: rotate(-135deg);
+      -moz-transform: rotate(-135deg);
+      -o-transform: rotate(-135deg);
+      transform: rotate(-135deg);
+      }
+    }
+  }
+@include max-screen($breakpoint-tablet) {
+  height: $head_height_tb;
+  position: fixed;
+  &.stay{
+    position: fixed;
+    background-color: #FFF;
+  }
+  &_inner{
+    height: $head_height_tb;
+  }
+  &_logo{
+    width: 150px;
+  }
+  &_list{
+    display: none;
+    position: fixed;
+    width: 300px;
+    height: 100vh;
+    background-color: #FFF;
+    top: 0;
+    right: 0;
+    padding-top: 100px;
+    &.on{
+      display: block;
+    }
+    li{
+      a{
+        margin-top: 10px;
+        padding-left: 70px;
+        &:before{
+          display: none;
+        }
+      }
+    }
+  }
+  &_menu{
+    &_btn{
+      display: block;
+      right: -5px;
+    }
+  }
+}
+@include max-screen($breakpoint-mobile) {
+  height: $head_height_sp;
+  &_inner{
+    height: $head_height_sp;
+    width: $head_inner_sp;
+  }
+  &_logo{
+    width: 130px;
+    &.on{
+      display: block;
+    }
+  }
+  &_list{
+     width: 100%;
+     padding-top: 80px;
+     &.slide{
+       width: 100%;
+       padding-top: 80px;
+        border-left: 0px;
+       li{
+         a{
+           padding: 15px 0;
+           margin-top: 0;
+           text-align: center;
+         }
+       }
+     }
+     li{
+       a{
+         padding: 15px 0;
+         text-align: center;
+       }
+     }
+  }
+  &_menu{
+    &_btn{
+      height: $head_height_sp;
+    }
+    
+  }
+}
+}

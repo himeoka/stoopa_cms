@@ -1,0 +1,49 @@
+.p_error{
+  text-align: center;
+  &_inner{
+    padding: 150px 0 150px;
+  }
+  &_head{
+    &_ttl{
+      font-size: 40px;
+    }
+    &_subttl{
+      font-size: 20px;
+    }
+  }
+  &_lead{
+    margin-top: 50px;
+    &_para{
+      font-size: 16px;
+      margin-top: 30px;
+      a{
+        text-decoration: underline;
+        text-align: center;
+        display: block;
+      }
+    }
+  }
+@include max-screen($breakpoint-mobile){
+  &_inner{
+    padding: 70px 0 70px;
+  }
+  &_head{
+    &_ttl{
+      font-size: 25px;
+    }
+    &_subttl{
+      font-size: 14px;
+    }
+  }
+  &_lead{
+    margin-top: 30px;
+    text-align: left;
+    &_para{
+      font-size: 14px;
+      a{
+        text-decoration: underline;
+      }
+    }
+  }
+}
+}

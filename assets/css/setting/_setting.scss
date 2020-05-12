@@ -1,0 +1,135 @@
+/* display */
+img{
+  width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+object{
+  width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+.tb{
+  display:none
+}
+.sp{
+  display: none;
+}
+.sp_tb{
+  display: none;
+}
+.s_sp{
+  display: none;
+}
+
+.cf:after {
+    content:" ";
+    display:block;
+    clear:both;
+}
+.hide{
+  display: none;
+}
+*{
+-webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+/* display */
+
+/* font */
+body{
+  -webkit-text-size-adjust: 100%; 
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.7;
+  //font-feature-settings: "palt";
+  letter-spacing: .04em;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+}
+.kerning{
+  letter-spacing: -.1em;
+}
+.kerning_m{
+  //margin-left:.28em;
+}
+.bold{
+  font-weight:bold;
+}
+.bold{
+  font-weight: bold;
+}
+.italic{
+  font-style: italic;
+}
+.center{
+  text-align: center;
+}
+.just{
+  text-align: justify;
+  text-justify: inter-ideograph;
+}
+a:hover{
+}
+.hover{
+  &:hover{
+    opacity: .5;
+  }
+}
+/*  color   */
+
+.no-wrapp{
+  white-space: nowrap;
+  display: inline-block;
+}
+.no-space{
+  letter-spacing: -.5em;
+}
+
+
+@include max-screen($breakpoint-tablet)  {
+body{
+  font-size: 14px;
+}
+/* display */
+
+.tb{
+  display:block
+}
+.sp_tb{
+  display:block
+}
+.sp_pc{
+  display: none;
+}
+.pc{
+  display:none
+}
+
+
+/* display */
+
+}
+
+@include max-screen($breakpoint-mobile)  {
+/* display */
+.tb_pc{
+  display: none
+}
+.sp_pc{
+  display:block
+}
+.tb{
+  display: none;
+}
+.sp{
+  display: block;
+}
+
+/* display */
+}
+
+@include max-screen($breakpoint-mobile_s) {
+.s_sp{
+  display: block;
+}
+}

@@ -1,0 +1,181 @@
+//mixin
+@mixin box($size) {
+  padding-top: $size;
+  content: "";
+  display: block;
+}
+@mixin boxinner() {
+  position: absolute;
+  left: 0;
+  top:0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin cover($url) {
+background-image: url($url);
+background-size: cover;
+background-position: center center;
+background-repeat: no-repeat;
+}
+
+
+@mixin max-screen($break-point) {
+  @media screen and (max-width: $break-point) {
+    @content;
+  }
+}
+
+@mixin min-screen($break-point) {
+  @media screen and (min-width: $break-point) {
+    @content;
+  }
+}
+
+@mixin screen($break-point-min, $break-point-max) {
+  @media screen and (min-width: $break-point-min) and (max-width: $break-point-max) {
+    @content;
+  }
+}
+
+@mixin image() {
+background-position: center center;
+background-size: cover;
+background-repeat: no-repeat;
+position: absolute;
+display: block;
+left: 0;
+top: 0;
+width: 100%;
+height: 100.5%;
+transition: transform .8s cubic-bezier(.05,.75,.35,.93) , opacity .8s;
+backface-visibility: hidden;
+}
+
+@mixin initFade(){
+  opacity: 0;
+  transition: opacity .3s ease-in;
+}
+
+
+
+
+//font
+@mixin ttl1(){
+    line-height: 1.4;
+    font-size: 26px;
+    font-weight: bold;
+    color: $navy;
+    @media screen and (max-width:$breakpoint-tablet) {
+    font-size: 22px;
+    }
+}
+
+@mixin ttl1_en(){
+    line-height: 1.1;
+    font-size: 50px;
+    color: $blue;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+    @media screen and (max-width:$breakpoint-tablet) {
+    font-size: 36px;
+  }
+}
+
+
+@mixin ttl2(){
+    font-size: 32px;
+    line-height: 1.3;
+    font-weight: bold;
+    color: $navy;
+    @media screen and (max-width:$breakpoint-tablet) {
+    font-size: 24px;
+    line-height: 1.6;
+    }
+}
+
+@mixin ttl3(){
+    font-size: 20px;
+    font-weight: bold;
+    @media screen and (max-width:$breakpoint-tablet) {
+    font-size: 17px;
+    }
+}
+
+@mixin ttl4(){
+    font-size: 24px;
+    line-height: 1.3;
+    font-weight: bold;
+    @media screen and (max-width:$breakpoint-tablet) {
+    font-size: 22px;
+  }
+}
+
+@mixin ttl4_en(){
+    font-size: 28px;
+    line-height: 1.3;
+    font-weight: bold;
+    color: $blue;
+    @media screen and (max-width:$breakpoint-tablet) {
+    font-size: 24px;
+    }
+}
+
+
+
+@mixin ttl5(){
+    font-size: 26px;
+    line-height: 1.3;
+    font-weight: bold;
+    color: $navy;
+    @media screen and (max-width:$breakpoint-tablet) {
+    font-size: 22px;
+    line-height: 1.6;
+    }
+}
+
+
+
+@mixin text1(){
+    font-size: 17px;
+    line-height: 2.9;
+    @media screen and (max-width:$breakpoint-tablet) {
+    font-size: 15px;
+    line-height: 2.6;
+    }
+    @media screen and (max-width:$breakpoint-mobile) {
+    }
+}
+
+@mixin text2(){
+    font-size: 14px;
+  @media screen and (max-width:$breakpoint-tablet) {
+    font-size: 13px;
+  }
+}
+
+@mixin text3(){
+    font-size: 15px;
+  @media screen and (max-width:$breakpoint-tablet) {
+    font-size: 14px;
+  }
+}
+
+
+@mixin lead1(){
+    font-size: 17px;
+    line-height: 1.8;
+  @media screen and (max-width:$breakpoint-tablet) {
+    font-size: 15px;
+  }
+}
+
+@mixin lead2(){
+  @media screen and (max-width:$breakpoint-tablet) {
+  }
+}
+
+@mixin lead3(){
+  @media screen and (max-width:$breakpoint-tablet) {
+  }
+}

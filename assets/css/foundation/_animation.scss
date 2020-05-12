@@ -1,0 +1,80 @@
+.fade{
+  opacity: 0;
+  transition-duration: 1s;
+  transition-property: opacity;
+  transition-timing-function: ease-in;
+  &.s2{
+    transition-duration: 2s;
+  }
+  &.ease-out{
+    transition-timing-function: ease-out;
+  }
+  &.on{
+    opacity: 1;
+  }
+}
+.fadeText{
+  opacity: 0;
+  transform: scale3d(1.1,1.1,1);
+  transition-duration: 1s,1s;
+  transition-property: opacity,transform;
+  transition-timing-function: ease-in,linear;
+  &.on{
+    opacity: 1;
+    transform: scale3d(1,1,1)
+  }
+}
+.textMove{
+  .text{
+    display: inline-block;
+  }
+  span{
+    display: inline-block;
+    min-width: 10px;
+    transform: translateX(-5px);
+    opacity: 0;
+    transition: opacity .3s,transform .3s linear;
+  }
+  &.on{
+    span{
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+.fadeUp{
+  opacity: 0;
+  transform: translate3d(0px,20%,0px);
+  transition-duration: 1s,1s;
+  transition-property: opacity,transform;
+  transition-timing-function: ease-in,ease-in;
+  &.s2{
+    transition-duration: 2s,2s;
+  }
+  &.ease-out{
+    transition-timing-function: ease-out,ease-out;
+  }
+  &.on{
+    opacity: 1;
+    transform: translate3d(0px,0px,0px);
+  }
+}
+
+
+@mixin keyframes($animation-name: animaton) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+@mixin animation($animation-name) {
+  animation: $animation-name;
+  animation-fill-mode: forwards;
+}

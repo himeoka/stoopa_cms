@@ -1,0 +1,16 @@
+.parts_circle_btn{
+  display: block;
+  padding: 10px 0;
+  padding-left: 35px;
+  color: #FFF;
+  background-image: url(/img/cmn/circle_arrow_g_r.svg);
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size:22px 22px;
+  line-height: 1;
+  &.rev{
+    background-image: url(/img/cmn/circle_arrow_g_l.svg);
+  }
+  &:hover{
+  }
+}

@@ -1,0 +1,43 @@
+.p_news{
+  padding-bottom: 100px;
+  &_article{
+    &_inner{
+      max-width: $max2;
+    }
+    &_ttl{
+      text-align: center;
+      font-weight: bold;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    &_tag{
+      margin-bottom: 30px;
+      text-align: center;
+      &_block{
+        display: inline-block;
+        margin-right: 10px;
+        a{
+          font-size: 12px;
+          padding: 5px 10px;
+          border-radius: 100px;
+          background-color: #999;
+          color: #FFF;
+        }
+      }
+    }
+    &_image{
+      margin-bottom: 30px;
+    }
+    &_content{
+      max-width: 800px;
+      margin: auto;
+      margin-top: 50px;
+      p{
+        margin-top: 20px;
+      }
+      a{
+        text-decoration: underline;
+      }
+    }
+  }
+}

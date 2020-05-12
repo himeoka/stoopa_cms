@@ -1,0 +1,93 @@
+.m_page{
+  &_top{
+    &_ttl{
+      text-align: left;
+      line-height: 1.2;
+      .ttl{
+        color: $red2;
+        font-size: 20px;
+      }
+    }
+    &_para{
+      margin-top: 30px;
+      &_wrapp{
+        margin-top: 30px;
+        text-align: left;
+      }
+    }
+  }
+  &_content{
+    margin-top: 80px;
+    padding-top: 80px;
+    border-top: 1px solid #000;
+  }
+  &_table{
+    text-align: left;
+    max-width: 100%;
+    line-height: 2;
+    display: table;
+    .tr{
+      display: table-row;
+    }
+    th,.th{
+      padding-right: 50px;
+      white-space: nowrap;
+      padding-bottom: 25px;
+      display: table-cell;
+      vertical-align: top;
+    }
+    td,td{
+      padding-bottom: 20px;
+      display: table-cell;
+    }
+  }
+@include max-screen($breakpoint-tablet) {
+  &_top{
+    &_ttl{
+      .ttl{
+        font-size: 20px;
+      }
+    }
+  }
+  &_content{
+    margin-top: 70px;
+    padding-top: 70px;
+  }
+  &_table{
+    th{
+      padding-right: 30px;
+    }
+    td{
+    }
+  }
+}
+@include max-screen($breakpoint-mobile) {
+  &_top{
+    &_ttl{
+      .ttl{
+        font-size: 22px;
+      }
+    }
+    &_para{
+      margin-top: 20px;
+      &_wrapp{
+        margin-top: 30px;
+      }
+    }
+  }
+  &_content{
+    margin-top:70px;
+    padding-top:70px;
+  }
+  &_table{
+    th{
+      padding-right: 30px;
+      padding-bottom: 20px;
+    }
+    td{
+      padding-bottom: 20px;
+    }
+  }
+}
+
+}

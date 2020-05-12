@@ -1,0 +1,89 @@
+
+/**
+ * ==============================================
+ * Dot Flashing
+ * ==============================================
+ */
+.dot-flashing {
+  position: relative;
+  width: 15px;
+  height: 15px;
+  border-radius:  50%;
+  background-color: #9880ff;
+  color: #9880ff;
+  animation: dot-flashing 1s infinite linear alternate;
+  animation-delay: .5s;
+}
+
+.dot-flashing::before, .dot-flashing::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 0;
+}
+
+.dot-flashing::before {
+  left: -20px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: $red2;
+  color: $red2;
+  animation: dot-flashing 1s infinite alternate;
+  animation-delay: 0s;
+}
+
+.dot-flashing::after {
+  left: 20px;
+  width: 15px;
+  height: 15px;
+  border-radius:  50%;
+  background-color:$red2;
+  color: $red2;
+  animation: dot-flashing 1s infinite alternate;
+  animation-delay: 1s;
+}
+
+@keyframes dot-flashing {
+  0% {
+    background-color: $red2;
+  }
+  50%,
+  100% {
+    background-color:#D8918F;
+  }
+}
+@keyframes appear {
+  0%{visibility: hidden};
+  100%{visibility: visible};
+}
+
+
+.parts_loader{
+  position:fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width:100%;
+  height:100%;
+  margin: auto;
+  z-index: 10000;
+  background-color: #FFF;
+  animation: appear 0s linear 2s;
+  animation-fill-mode: forwards;
+  visibility: hidden;
+  &.fontready.imageready{
+    display: none;
+  }
+}
+
+.dot-flashing{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+

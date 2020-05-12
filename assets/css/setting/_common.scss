@@ -1,0 +1,159 @@
+html{
+  -ms-overflow-style: none;  /* これを追加 */
+  scrollbar-width: none;
+}
+body::-webkit-scrollbar {
+  display:none;
+}
+.wrapper{
+  visibility: hidden;
+  height: 100vh;
+  &.ready{
+    visibility: visible;
+    opacity: 1;
+  }
+}
+.contents{
+  &.padding{
+    padding-top: $head_height;
+  }
+  &_inner{
+    position: relative;
+    //visibility:hidden;
+    opacity: 0;
+    transition: opacity 900ms cubic-bezier(.445,.05,.55,.95) .1s;
+    &.fontready.imageready{
+      //visibility: visible;
+      opacity: 1;
+    }
+    &.padding{
+      padding-top: 60px;
+    }
+  }
+}
+#__nuxt .nuxt-progress{
+  top: 0;
+  height: 3px!important;
+//  display: none;
+}
+//inner
+
+.inner{
+  margin:auto;
+  width: $inner_pc;
+  max-width: $max1;
+}
+.inner_pc{
+  margin:auto;
+  width:$inner_pc;
+  max-width: $max1;
+}
+.inner_tb_pc{
+  margin:auto;
+  width:$inner_pc;
+  max-width: $max1;
+}
+a{
+  color: #000;
+}
+a,.link{
+  transition:color .3s;
+}
+.image_hover{
+  .image_wrapp{
+    position: relative;
+    overflow: hidden;
+    backface-visibility: hidden;
+  }
+  .image{
+    @include image();
+  }
+  .text{
+    transition:color .3s;
+  }
+}
+.image_hover:hover{
+  .image{
+    transform:scale(1.1,1.1);
+    opacity: .85;
+  }
+  .text{
+  }
+}
+
+
+.anchor{
+  padding-top: 70px;
+  margin-top: -70px;
+}
+
+.bg{
+  position: relative;
+  z-index: 2;
+  &.white{
+    background-color: #FFF;
+  }
+}
+
+@include max-screen($breakpoint-tablet) {
+
+
+.wrapper{
+}
+.contents{
+  &.padding{
+    padding-top:  $head_height;
+  }
+  &_inner{
+    &.padding{
+      padding-top: 50px;
+    }
+  }
+}
+
+//inner
+.inner_pc{
+  width: auto;
+}
+.inner,.inner_sp_tb,.inner_tb_pc{
+  margin:auto;
+  width: $inner_tb;
+}
+
+}
+@include max-screen($breakpoint-mobile) {
+.contents{
+  &.padding{
+    padding-top: $head_height_sp;
+  }
+  &_inner{
+    &.padding{
+      padding-top: 10px;
+    }
+  }
+}
+#__nuxt .nuxt-progress{
+  height: 3px!important;
+}
+.anchor{
+  padding-top: 50px;
+  margin-top: -50px;
+}
+
+
+.inner_tb_pc,.inner_tb{
+  width: auto;
+}
+.inner_sp,.inner,.inner_sp_tb,.inner_sp_pc{
+  margin: auto;
+  width: $inner_sp;
+}
+}
+
+
+@include max-screen($breakpoint-mobile_s) {
+
+.content{
+}
+
+}
