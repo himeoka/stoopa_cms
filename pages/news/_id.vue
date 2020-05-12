@@ -15,6 +15,7 @@ div.p_news.contents.padding(ref="contents")
         div.p_news_article_content
           div.p_news_article_content_text(v-html="data.article")
 
+
 </template>
 <script>
 import commonMixin from '~/mixin/common.js';
