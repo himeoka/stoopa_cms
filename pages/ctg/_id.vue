@@ -35,16 +35,16 @@ export default {
   },
   data () {
     return {
-      ttl:"TOP",
-      page:"index",
+      ttl:"",
+      page:"ctg",
       des:"",
       items:[]
     }
   },
-  async asyncData({app,store}) {
+  async asyncData({app,store,params}) {
     console.log()
     const { data } = await app.$axios.get(
-      store.state.api + "/news?fields=title,image,ctg,id",
+      store.state.api + `/news?fields=title,image,ctg,id&filters=ctg[contains]${params.id}`,
       {
         headers: { "X-API-KEY":store.state.apiKey }
       }
