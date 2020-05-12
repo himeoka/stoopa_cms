@@ -5,12 +5,6 @@ const { API_KEY } = process.env;
 
 export default {
   mode: 'universal',
-
-  server: {
-      port: 3333,
-      host: '192.168.10.10',
-  },
-
   /*
   ** Headers of the page
   */
