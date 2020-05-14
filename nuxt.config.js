@@ -10,7 +10,6 @@ export default {
   head: {
     title: 'stoopa_cms',
     htmlAttrs: {
-      prefix: 'prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#"',
       lang: 'ja'
     },
     meta: [
@@ -29,6 +28,7 @@ export default {
   env: {
     API_KEY:process.env.API_KEY
   },
+
   css: [
     '~assets/css/style.scss'
   ],
@@ -36,6 +36,7 @@ export default {
     { src: '~plugins/lazysizes.js',ssr: false },
     { src: '~plugins/vue-observe-visibility.js'},
     { src: '~plugins/vue-scrollto.js',ssr: false },
+    { src: '~plugins/vue-awesome-swiper.js',ssr: false}
   ],
   buildModules: [
   ],
@@ -45,6 +46,12 @@ export default {
     'nuxt-user-agent',
     '@nuxtjs/svg',
   ],
+  axios: {
+    baseURL:"https://stoopa.microcms.io/api/v1",
+    headers:{
+      "X-API-KEY":process.env.API_KEY
+    }
+  },
   router: {
     linkActiveClass: 'active-link'
   },
@@ -60,7 +67,7 @@ export default {
       'cssnano': {}
       }
     },
-    vendor: ['vue-observe-visibility','lazysizes','vue-scrollto'],
+    vendor: ['vue-observe-visibility','lazysizes','vue-scrollto','vue-awesome-swiper'],
     extend(config, ctx) {
     }
   }

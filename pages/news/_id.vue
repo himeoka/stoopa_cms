@@ -6,12 +6,12 @@ div.p_news.contents.padding(ref="contents")
         h1.p_news_article_ttl {{data.title}}
         div.p_news_article_tag
           div.p_news_article_tag_block(v-for="item in data.ctg")
-            nuxt-link(:to="'/ctg/' + item.id") {{item.name}}
+            nuxt-link(:to="'/ctg/' + item.id + '?ctg=' + item.name") {{item.name}}
               
         p.p_news_article_image
-          img.lazyload(:src="dummyImg",:data-src="data.image.url", :data-srcset="data.image.url+' 1x,\' + data.image.url + '?dpr=2 2x'", alt="")
+          img.lazyload(:src="dummyImg",:data-src="data.image.url", :data-srcset="data.image.url+'?w=1000 1x,\' + data.image.url + '?w=1000&dpr=2 2x'", alt="")
         p.p_news_article_image(v-for="item in data.subimages")
-          img.lazyload(:src="dummyImg",:data-src="item.image.url", :data-srcset="item.image.url+' 1x,\' + item.image.url + '?dpr=2 2x'", alt="")
+          img.lazyload(:src="dummyImg",:data-src="item.image.url", :data-srcset="item.image.url+'?w=1000 1x,\' + item.image.url + '?w=1000&dpr=2 2x'", alt="")
         div.p_news_article_content
           div.p_news_article_content_text(v-html="data.article")
 
@@ -45,13 +45,7 @@ export default {
     }
   },
   async asyncData({app,store,params}) {
-    console.log()
-    const { data } = await app.$axios.get(
-      store.state.api + `/news/${params.id}`,
-      {
-        headers: { "X-API-KEY":store.state.apiKey }
-      }
-    );
+    const { data } = await app.$axios.get(`/news/${params.id}`);
     return {
       data: data
     }

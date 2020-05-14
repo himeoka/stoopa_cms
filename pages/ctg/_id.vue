@@ -2,6 +2,7 @@
 div.p_index.contents.padding(ref="contents")
   div.contents_inner.p_index_inner.inner.padding(ref="contents_inner",:class="{fontready:$store.state.fontready,imageready:$store.state.imageready}")
     div.p_index_top
+      h1.p_index_top_ttl {{$route.query.ctg}}
       div.p_index_top_list
         article.p_index_top_list_block(v-for="item in items")
           nuxt-link(:to="'/news/' + item.id")
@@ -10,7 +11,7 @@ div.p_index.contents.padding(ref="contents")
             h1.p_index_top_list_block_ttl {{item.title}}
           div.p_index_top_list_block_tag
             div.p_news_article_tag_block(v-for="item in item.ctg")
-              nuxt-link(:to="'/ctg/' + item.id") {{item.name}}
+              nuxt-link(:to="'/ctg/' + item.id + '?ctg=' + item.name") {{item.name}}
               
 
 </template>
@@ -42,13 +43,7 @@ export default {
     }
   },
   async asyncData({app,store,params}) {
-    console.log()
-    const { data } = await app.$axios.get(
-      store.state.api + `/news?fields=title,image,ctg,id&filters=ctg[contains]${params.id}`,
-      {
-        headers: { "X-API-KEY":store.state.apiKey }
-      }
-    );
+    const { data } = await app.$axios.get(`/news?fields=title,image,ctg,id&filters=ctg[contains]${params.id}`);
     return {
       items: data.contents
     }
@@ -57,7 +52,6 @@ export default {
   },
   mounted(){
     var self = this;
-    console.log(this.items)
   },
   beforeDestroy(){
   },
