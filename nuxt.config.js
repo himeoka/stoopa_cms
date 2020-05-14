@@ -1,7 +1,6 @@
 import pkg from './package'
 const webpack = require('webpack')
 require("dotenv").config();
-const { API_KEY } = process.env;
 
 export default {
   mode: 'universal',
@@ -28,7 +27,7 @@ export default {
     ],
   },
   env: {
-    API_KEY
+    API_KEY:process.env.API_KEY
   },
   css: [
     '~assets/css/style.scss'
