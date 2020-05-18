@@ -49,7 +49,7 @@ export default {
   axios: {
     baseURL:"https://stoopa.microcms.io/api/v1",
     headers:{
-      "X-API-KEY":process.env.API_KEY
+      "X-API-KEY":"e8e956a4-4a09-4c71-ac0c-60b577553a3b"
     }
   },
   router: {

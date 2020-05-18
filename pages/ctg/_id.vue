@@ -21,23 +21,17 @@ import pageMixin from '~/mixin/mixin.js';
 export default {
 //  layout: 'top',
   mixins: [commonMixin,pageMixin],
-  head () {
-    return {
-      title: this.ttl + this.$store.state.sep + this.$store.state.title,
-      meta: [
-        { property: 'og:title', content:this.ttl + this.$store.state.sep + this.$store.state.title },
-        { hid: 'description', name: 'description', content: this.des},
-        { property: 'og:description', content: this.des},
-        { property: 'twitter:description', content: this.des},
-      ]
-    }
-  },
   components: {
   },
   data () {
     return {
-      ttl:"",
       page:"ctg",
+      meta: {
+        title: this.$route.query.ctg,
+        description: 'ページ個別のディスクリプション',
+        type: 'article',
+        image: 'https://example.com/img/ogp/test.jpg',
+      },
       des:"",
       items:[]
     }
