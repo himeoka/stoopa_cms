@@ -10,7 +10,10 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "gulp": "gulp",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build",
+    "build:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt build",
+    "generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt generate",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@nuxtjs/dotenv": "^1.4.1",
@@ -28,6 +31,7 @@
     "@nuxtjs/svg": "^0.1.11",
     "coffee-loader": "^0.9.0",
     "coffeescript": "^2.5.1",
+    "gh-pages": "^2.2.0",
     "intersection-observer": "^0.10.0",
     "node-sass": "^4.14.1",
     "nodemon": "^2.0.3",
@@ -35,6 +39,7 @@
     "nuxt-user-agent": "^1.2.2",
     "pug": "^2.0.4",
     "pug-plain-loader": "^1.0.0",
+    "push-dir": "^0.4.1",
     "sass-loader": "^8.0.2",
     "vue-awesome-swiper": "^4.1.1"
   }

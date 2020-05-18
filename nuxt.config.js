@@ -28,7 +28,6 @@ export default {
   env: {
     API_KEY:process.env.API_KEY
   },
-
   css: [
     '~assets/css/style.scss'
   ],
@@ -53,7 +52,8 @@ export default {
     }
   },
   router: {
-    linkActiveClass: 'active-link'
+    linkActiveClass: 'active-link',
+    //base: '/stoopa_cms/'
   },
   build: {
     plugins: [
