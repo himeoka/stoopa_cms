@@ -21,7 +21,7 @@
     "lazysizes": "^5.2.0",
     "nuxt": "^2.12.2",
     "picturefill": "^3.0.3",
-    "swiper": "^5.3.8",
+    "swiper": "^6.5.1",
     "vue-observe-visibility": "^0.4.6",
     "vue-scrollto": "^2.18.1"
   },
