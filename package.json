@@ -33,7 +33,7 @@
     "coffeescript": "^2.5.1",
     "gh-pages": "^2.2.0",
     "intersection-observer": "^0.10.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "nodemon": "^2.0.3",
     "nuxt-device-detect": "^1.1.5",
     "nuxt-user-agent": "^1.2.2",
