@@ -19,7 +19,7 @@
     "@nuxtjs/dotenv": "^1.4.1",
     "jquery": "^3.5.1",
     "lazysizes": "^5.2.0",
-    "nuxt": "^2.12.2",
+    "nuxt": "^2.15.8",
     "picturefill": "^3.0.3",
     "swiper": "^5.3.8",
     "vue-observe-visibility": "^0.4.6",
